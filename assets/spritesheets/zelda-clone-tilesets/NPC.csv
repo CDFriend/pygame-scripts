@@ -1,0 +1,17 @@
+x,y,width,height,filename
+0,7,16,21,npc_walk_down_0.png
+16,7,16,21,npc_walk_down_1.png
+32,7,16,21,npc_walk_down_2.png
+48,7,16,21,npc_walk_down_3.png
+2,39,13,21,npc_walk_right_0.png
+18,39,13,21,npc_walk_right_1.png
+34,39,13,21,npc_walk_right_2.png
+50,39,13,21,npc_walk_right_3.png
+0,70,16,22,npc_walk_up_0.png
+16,70,16,22,npc_walk_up_1.png
+32,70,16,22,npc_walk_up_2.png
+48,70,16,22,npc_walk_up_3.png
+1,103,13,21,npc_walk_left_0.png
+17,103,13,21,npc_walk_left_1.png
+33,103,13,21,npc_walk_left_2.png
+49,103,13,21,npc_walk_left_3.png
