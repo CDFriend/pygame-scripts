@@ -10,7 +10,7 @@ from pytmx.util_pygame import load_pygame
 
 
 class World(pygame.sprite.Sprite):
-    def __init__(self, tmx_path, init_pos=(0,0)):
+    def __init__(self, tmx_path, init_pos=(0,0), character=None):
         """ Initialize a pygame sprite from a tmx world. """
         pygame.sprite.Sprite.__init__(self)
 
@@ -19,11 +19,17 @@ class World(pygame.sprite.Sprite):
 
         self.set_camera_pos(init_pos)
 
+        self._character = character
+
+    def update(self):
+        if self._character:
+            self.set_camera_pos(self._character.pos)
+
     def set_camera_pos(self, pos):
         """ Set the camera's center position to (pos[0], pos[1]). """
         screen = pygame.display.get_surface()
-        self.rect.topleft = [pos[0] + screen.get_width() / 2,
-                             pos[1] + screen.get_height() / 2]
+        self.rect.topleft = [-pos[0] + screen.get_width() / 2,
+                             -pos[1] + screen.get_height() / 2]
 
     def _make_map_image(self, tiledmap):
         """ Get image and rect from pytmx tiled map. """

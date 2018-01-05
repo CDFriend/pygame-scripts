@@ -31,9 +31,7 @@ class Character(pygame.sprite.Sprite):
         }
 
         self._update_image()
-
         self.pos = [50, 50]
-        self.rect.topleft = self.pos
 
     def update(self):
         pressed = pygame.key.get_pressed()
@@ -55,7 +53,9 @@ class Character(pygame.sprite.Sprite):
             self.direction = DIR_RIGHT
             self._update_image()
 
-        self.rect.topleft = self.pos
-
     def _update_image(self):
         self.image, self.rect = self.animations[self.direction].next_frame()
+
+        # always draw character in center of screen (camera moves)
+        screen = pygame.display.get_surface()
+        self.rect.center = (screen.get_width() / 2, screen.get_height() / 2)
