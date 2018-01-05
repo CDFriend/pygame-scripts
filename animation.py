@@ -6,10 +6,10 @@ from utils import load_image
 class Animation(object):
     """ Generic looping animation class - loops through several specified frames. """
 
-    def __init__(self, frames, ticks_per_frame=1):
+    def __init__(self, frames, ticks_per_frame=1, colorkey=None):
         """ Create an animation from a list of file paths (passed to utils/load_image) """
         # load frames from file, then duplicate references
-        frames = [load_image(filename) for filename in frames]
+        frames = [load_image(filename, colorkey=colorkey) for filename in frames]
         self._frames = []
         for frame in frames:
             self._frames.extend([frame for x in xrange(ticks_per_frame)])

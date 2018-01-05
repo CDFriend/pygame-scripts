@@ -23,11 +23,12 @@ class Character(pygame.sprite.Sprite):
         self.direction = DIR_DOWN
 
         # init sprites
+        ck = (0,0,0)
         self.animations = {
-            DIR_UP:    Animation(glob("assets/images/character/character_walk_up*.png"), CHAR_ANIMATION_TPF),
-            DIR_DOWN:  Animation(glob("assets/images/character/character_walk_down*.png"), CHAR_ANIMATION_TPF),
-            DIR_LEFT:  Animation(glob("assets/images/character/character_walk_left*.png"), CHAR_ANIMATION_TPF),
-            DIR_RIGHT: Animation(glob("assets/images/character/character_walk_right*.png"), CHAR_ANIMATION_TPF)
+            DIR_UP:    Animation(glob("assets/images/character/character_walk_up*.png"), CHAR_ANIMATION_TPF, ck),
+            DIR_DOWN:  Animation(glob("assets/images/character/character_walk_down*.png"), CHAR_ANIMATION_TPF, ck),
+            DIR_LEFT:  Animation(glob("assets/images/character/character_walk_left*.png"), CHAR_ANIMATION_TPF, ck),
+            DIR_RIGHT: Animation(glob("assets/images/character/character_walk_right*.png"), CHAR_ANIMATION_TPF, ck)
         }
 
         self._update_image()
